@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Used to display Block Slider content anywhere in Moodle contents
+ *
  * @package    filter_slider
  * @copyright  2020 Kamil Łuczak <kamil@limsko.pl>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -22,9 +24,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2020011801;
+$plugin->version = 2020011802;
 $plugin->maturity = MATURITY_BETA;
-$plugin->release = '1.0 (Build: 2020011801)';
+$plugin->release = '1.0.1 (Build: 2020011802)';
 $plugin->requires = 2013050100;
 $plugin->component = 'filter_slider';
 $plugin->dependencies = array(

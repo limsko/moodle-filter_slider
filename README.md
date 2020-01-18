@@ -5,8 +5,9 @@ This filter allows You to include slider from block_slider anywhere in Moodle co
 
 Release notes
 =========================
-*1.0
-This is first release of this filter.
+
+* 1.0.1 Fixed missing block_base class during page edit.
+* 1.0 This is first release of this filter.
 
 
 Requirements

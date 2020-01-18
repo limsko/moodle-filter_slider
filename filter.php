@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Used to display Block Slider content anywhere in Moodle contents
+ *
  * @package    filter_slider
  * @copyright  2020 Kamil Łuczak <kamil@limsko.pl>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -34,11 +36,15 @@ class filter_slider extends moodle_text_filter
      * @param string $text to be processed by the text
      * @param array $options filter options
      * @return string text after processing
+     * @throws coding_exception
+     * @throws dml_exception
+     * @throws moodle_exception
      * @see filter_manager::apply_filter_chain()
      */
     public function filter($text, array $options = array()) {
         global $CFG, $DB, $OUTPUT, $PAGE;
         require_once($CFG->libdir . '/filelib.php');
+        require_once($CFG->dirroot . '/blocks/moodleblock.class.php');
         require_once($CFG->dirroot . '/blocks/slider/block_slider.php');
         $pattern = "/\[SLIDER-(\d{1,3})\]/i";
         if (preg_match($pattern, $text, $output)) {
