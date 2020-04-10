@@ -15,13 +15,16 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Used to display Block Slider content anywhere in Moodle contents
+ * Strings for component 'filter_slider', language 'pl'
  *
  * @package    filter_slider
- * @copyright  2015 Kamil Łuczak <kamil@limsko.pl>
+ * @copyright  2020 Kamil Łuczak <kamil@limsko.pl>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
 $string['filtername'] = 'Slider w treści - dla bloku Slider';
+$string['block_id_not_exists'] = 'Slider o ID {$a} nie istnieje!';
+$string['not_allowed'] = 'Nie masz uprawnień, aby wyświetlić Slider ID {$a}.';
+$string['privacy:metadata'] = 'The Calendar block only displays existing calendar data.';

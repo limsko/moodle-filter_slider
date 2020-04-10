@@ -24,9 +24,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2020011802;
+$plugin->version = 2020041000;
 $plugin->maturity = MATURITY_BETA;
-$plugin->release = '1.0.1 (Build: 2020011802)';
+$plugin->release = '1.1 (Build: 2020041000)';
 $plugin->requires = 2013050100;
 $plugin->component = 'filter_slider';
 $plugin->dependencies = array(

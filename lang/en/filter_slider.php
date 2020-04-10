@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Used to display Block Slider content anywhere in Moodle contents
+ * Strings for component 'filter_slider', language 'en'
  *
  * @package    filter_slider
  * @copyright  2020 Kamil Łuczak <kamil@limsko.pl>
@@ -25,3 +25,6 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['filtername'] = 'Slider in content - for Slider Block';
+$string['block_id_not_exists'] = 'Slider Block with ID {$a} doesn\'t exists!';
+$string['not_allowed'] = 'You do not have permissions to display Slider Block with ID {$a}!';
+$string['privacy:metadata'] = 'The Filter Slider only displays existing Block Slider content.';
