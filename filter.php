@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Used to display Block Slider content anywhere in Moodle contents
+ * Used to display Block Slider content anywhere in Moodle contents.
  *
  * @package    filter_slider
  * @copyright  2020 Kamil Łuczak <kamil@limsko.pl>
@@ -30,7 +30,7 @@ defined('MOODLE_INTERNAL') || die();
 class filter_slider extends moodle_text_filter {
 
     /**
-     * Apply the filter to the text
+     * Apply the filter to the text and display Slider instead of shortcode.
      *
      * @param string $text to be processed by the text
      * @param array $options filter options
@@ -41,11 +41,11 @@ class filter_slider extends moodle_text_filter {
      * @see filter_manager::apply_filter_chain()
      */
     public function filter($text, array $options = array()) {
-        global $CFG, $DB, $OUTPUT, $PAGE, $USER;
+        global $CFG, $DB, $PAGE, $USER;
         require_once($CFG->libdir . '/filelib.php');
         require_once($CFG->dirroot . '/blocks/moodleblock.class.php');
         require_once($CFG->dirroot . '/blocks/slider/block_slider.php');
-        $pattern = "/\[SLIDER-(\d{1,3})\]/i";
+        $pattern = "/\[SLIDER-(\d{1,5})\]/i";
         if (preg_match($pattern, $text, $output)) {
             $sliderid = $output[1];
             if ($blockinstance = $DB->get_record('block_instances', array('id' => $sliderid, 'blockname' => 'slider'))) {
@@ -60,15 +60,14 @@ class filter_slider extends moodle_text_filter {
                                 AND !has_capability('moodle/course:view', $parentcontext))
                 ) {
                     // This user is not allowed to see this block.
-                    if ($USER->editing) {
+                    if (isset($USER->editing) && $USER->editing) {
                         // Only when editing user can see the message.
                         return get_string('not_allowed', 'filter_slider', $sliderid);
                     }
                     // Specifically, I do not display any message to avoid confusion among users.
                     return '';
                 }
-                $text = preg_replace($pattern, '<div class="block_slider">' . $content->text . '</div>', $text) . '<pre>' .
-                        print_r(is_enrolled($parentcontext), 1) . '</pre>';
+                $text = preg_replace($pattern, '<div class="block_slider">' . $content->text . '</div>', $text);
             } else {
                 $text = preg_replace($pattern, get_string('block_id_not_exists', 'filter_slider', $sliderid), $text);
             }
