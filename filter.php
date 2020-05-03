@@ -41,7 +41,7 @@ class filter_slider extends moodle_text_filter {
      * @see filter_manager::apply_filter_chain()
      */
     public function filter($text, array $options = array()) {
-        global $CFG, $DB, $PAGE, $USER;
+        global $CFG, $DB, $PAGE, $USER, $SITE;
         require_once($CFG->libdir . '/filelib.php');
         require_once($CFG->dirroot . '/blocks/moodleblock.class.php');
         require_once($CFG->dirroot . '/blocks/slider/block_slider.php');
@@ -54,10 +54,12 @@ class filter_slider extends moodle_text_filter {
                 $content = $block->get_content();
                 $contextblock = context_block::instance($blockinstance->id);
                 $parentcontext = $contextblock->get_parent_context();
+                $blockonfrontpage = ($SITE->id == $parentcontext->instanceid); // Skip enrolment and course capability check.
                 if (!has_capability('moodle/block:view', $contextblock)
-                        OR ($parentcontext->contextlevel == CONTEXT_COURSE AND !is_enrolled($parentcontext))
+                        OR !$blockonfrontpage AND ($parentcontext->contextlevel == CONTEXT_COURSE AND !is_enrolled($parentcontext))
                         AND ($parentcontext->contextlevel == CONTEXT_COURSE
-                                AND !has_capability('moodle/course:view', $parentcontext))
+                                AND !has_capability('moodle/course:view', $parentcontext)
+                        )
                 ) {
                     // This user is not allowed to see this block.
                     if (isset($USER->editing) && $USER->editing) {
@@ -74,4 +76,5 @@ class filter_slider extends moodle_text_filter {
         }
         return $text;
     }
+    
 }
