@@ -22,6 +22,9 @@ available to them.
 | `MOODLE_405_STABLE` | 4.2 - 4.5 | 1.0.0 or later |
 | `MOODLE_503_STABLE` | 5.0 - 5.3 | 1.0.0 or later |
 
+Version numbers (`YYYYMMDDXX`) end with 00-49 on `MOODLE_405_STABLE` and 50-99 on `MOODLE_503_STABLE`,
+so for the same date the 5.x build is always newer. Release fixes on both branches together.
+
 ## Installation
 
 Install the plugin into `filter/slider` (`public/filter/slider` in Moodle 5.1 and later) or use the plugin
