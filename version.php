@@ -27,8 +27,8 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'filter_slider';
 $plugin->version = 2026102000;
-$plugin->requires = 2023042400;
-$plugin->supported = [402, 405];
+$plugin->requires = 2025041400;
+$plugin->supported = [500, 503];
 $plugin->maturity = MATURITY_STABLE;
 $plugin->release = '2.0.0';
 $plugin->dependencies = [

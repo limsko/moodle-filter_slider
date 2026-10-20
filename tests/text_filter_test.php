@@ -26,9 +26,9 @@ use filter_slider\local\shortcodes;
  * @author      Kamil Łuczak <kamil@limsko.pl>
  * @copyright   (C) 2026 Kamil Łuczak (https://limsko.pl)
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- * @covers      \filter_slider\text_filter
- * @covers      \filter_slider\local\shortcodes
  */
+#[\PHPUnit\Framework\Attributes\CoversClass(text_filter::class)]
+#[\PHPUnit\Framework\Attributes\CoversClass(shortcodes::class)]
 final class text_filter_test extends \advanced_testcase {
     /**
      * Strona, na której filtrowany jest tekst.

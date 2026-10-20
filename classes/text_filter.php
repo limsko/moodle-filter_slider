@@ -19,7 +19,7 @@ namespace filter_slider;
 use filter_slider\local\shortcodes;
 
 /**
- * Filtr wyświetlający slajder z bloku w dowolnej treści (Moodle 4.5 i nowsze).
+ * Filtr wyświetlający slajder z bloku w dowolnej treści.
  *
  * @package     filter_slider
  * @author      Kamil Łuczak <kamil@limsko.pl>
