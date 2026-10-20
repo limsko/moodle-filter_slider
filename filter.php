@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Filtr dla Moodle 4.2 - 4.4. Od 4.5 rdzeń używa klasy \filter_slider\text_filter i nie ładuje tego pliku.
+ * Stara lokalizacja klasy filtra dla Moodle 4.2 - 4.4 (od 4.5 rdzeń używa \filter_slider\text_filter).
  *
  * @package     filter_slider
  * @author      Kamil Łuczak <kamil@limsko.pl>
@@ -23,24 +23,4 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-use filter_slider\local\shortcodes;
-
-/**
- * Filtr wyświetlający slajder z bloku w dowolnej treści (Moodle 4.2 - 4.4).
- *
- * @package     filter_slider
- * @copyright   (C) 2020-2026 Kamil Łuczak (https://limsko.pl)
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class filter_slider extends moodle_text_filter {
-    /**
-     * Zamienia kody [SLIDER-id] na slajdery.
-     *
-     * @param string $text tekst
-     * @param array $options opcje filtra
-     * @return string
-     */
-    public function filter($text, array $options = []) {
-        return shortcodes::apply((string) $text);
-    }
-}
+class_alias(\filter_slider\text_filter::class, \filter_slider::class);

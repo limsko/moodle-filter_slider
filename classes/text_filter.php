@@ -18,15 +18,22 @@ namespace filter_slider;
 
 use filter_slider\local\shortcodes;
 
+// Klasa bazowa filtrów: \core_filters\text_filter od Moodle 4.5, wcześniej \moodle_text_filter.
+if (class_exists(\core_filters\text_filter::class)) {
+    class_alias(\core_filters\text_filter::class, base_text_filter::class);
+} else {
+    class_alias(\moodle_text_filter::class, base_text_filter::class);
+}
+
 /**
- * Filtr wyświetlający slajder z bloku w dowolnej treści (Moodle 4.5 i nowsze).
+ * Filtr wyświetlający slajder z bloku w dowolnej treści.
  *
  * @package     filter_slider
  * @author      Kamil Łuczak <kamil@limsko.pl>
  * @copyright   (C) 2020-2026 Kamil Łuczak (https://limsko.pl)
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class text_filter extends \core_filters\text_filter {
+class text_filter extends base_text_filter {
     /**
      * Zamienia kody [SLIDER-id] na slajdery.
      *
