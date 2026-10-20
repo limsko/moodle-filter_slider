@@ -15,16 +15,17 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'filter_slider', language 'en'
+ * English strings for filter_slider.
  *
- * @package    filter_slider
- * @copyright  2020 Kamil Łuczak <kamil@limsko.pl>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     filter_slider
+ * @author      Kamil Łuczak <kamil@limsko.pl>
+ * @copyright   (C) 2020-2026 Kamil Łuczak (https://limsko.pl)
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['filtername'] = 'Slider in content - for Slider Block';
-$string['block_id_not_exists'] = 'Slider Block with ID {$a} doesn\'t exists!';
-$string['not_allowed'] = 'You do not have permissions to display Slider Block with ID {$a}!';
-$string['privacy:metadata'] = 'The Filter Slider only displays existing Block Slider content.';
+$string['block_id_not_exists'] = 'There is no Slider block with ID {$a}. Check the code [SLIDER-{$a}].';
+$string['filtername'] = 'Slider in content';
+$string['not_allowed'] = 'The Slider block with ID {$a} is not available to you, so it is not shown here.';
+$string['privacy:metadata'] = 'The Slider in content filter only displays existing Slider blocks and does not store any personal data.';

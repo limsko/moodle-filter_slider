@@ -15,16 +15,17 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'filter_slider', language 'pl'
+ * Polskie teksty filtra slajdera.
  *
- * @package    filter_slider
- * @copyright  2020 Kamil Łuczak <kamil@limsko.pl>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     filter_slider
+ * @author      Kamil Łuczak <kamil@limsko.pl>
+ * @copyright   (C) 2020-2026 Kamil Łuczak (https://limsko.pl)
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['filtername'] = 'Slider w treści - dla bloku Slider';
-$string['block_id_not_exists'] = 'Slider o ID {$a} nie istnieje!';
-$string['not_allowed'] = 'Nie masz uprawnień, aby wyświetlić Slider ID {$a}.';
-$string['privacy:metadata'] = 'The Calendar block only displays existing calendar data.';
+$string['block_id_not_exists'] = 'Nie ma bloku Slajder o ID {$a}. Sprawdź kod [SLIDER-{$a}].';
+$string['filtername'] = 'Slajder w treści';
+$string['not_allowed'] = 'Blok Slajder o ID {$a} nie jest dla Ciebie dostępny, dlatego nie jest tu wyświetlany.';
+$string['privacy:metadata'] = 'Filtr Slajder w treści wyświetla tylko istniejące bloki Slajder i nie przechowuje danych osobowych.';

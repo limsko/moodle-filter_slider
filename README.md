@@ -1,52 +1,52 @@
-Slider Filter
-=========================
-This filter allows You to include slider from block_slider anywhere in Moodle content.
+# Slider in content (filter_slider)
 
+Text filter that shows a [Slider block](https://github.com/limsko/moodle-block_slider) anywhere in Moodle
+content: pages, labels, course summaries, forum posts and other texts processed by filters.
 
-Release notes
-=========================
+## Usage
 
-* 1.1 Fixed issues:
-    https://github.com/limsko/moodle-filter_slider/issues/3
-    https://github.com/limsko/moodle-filter_slider/issues/5
-    https://github.com/limsko/moodle-filter_slider/issues/6
-* 1.0.1 Fixed missing block_base class during page edit.
-* 1.0 This is first release of this filter.
+1. Install the Slider block and this filter.
+2. Enable the filter in *Site administration > Plugins > Filters > Manage filters*.
+3. Create a Slider block on any page and copy its code from *Manage slides*, for example `[SLIDER-25]`.
+4. Paste the code into any text. It is replaced with the slider, with the same slides and display settings.
 
+Several codes can be used in one text. The slider is shown only to users who can see the original block:
+users with access to its course (or activity), anyone on the front page, only the owner for a block on a
+personal Dashboard. Users editing the page see a notice when the code is wrong or the block is not
+available to them.
 
-Requirements
-=========================
-First You have to install block Slider version 0.2 available at https://moodle.org/plugins/block_slider
+## Requirements
 
+| Branch | Moodle | Slider block |
+|---|---|---|
+| `MOODLE_405_STABLE` | 4.2 - 4.5 | 1.0.0 or later |
+| `MOODLE_503_STABLE` | 5.0 - 5.3 | 1.0.0 or later |
 
-Installation
-=========================
-Install the plugin like any other plugin to folder /filter/slider
+## Installation
 
-If You're installing with Plugin installer using zip archive choose plugin type: Text filter (filter)
+Install the plugin into `filter/slider` (`public/filter/slider` in Moodle 5.1 and later) or use the plugin
+installer and choose the plugin type "Text filter". See
+[Installing plugins](https://docs.moodle.org/en/Installing_plugins).
 
-See http://docs.moodle.org/en/Installing_plugins for details on installing Moodle plugins
+## Version history
 
+### 2.0.0
+* Support for Slider block 1.0.0, Moodle 4.2 - 4.5 and 5.0 - 5.3.
+* All codes in a text are replaced (previously every code showed the first slider).
+* Access checks for courses, activities, categories and personal Dashboards.
+* Protection against a slider code inside the slider captions.
+* Notices only for users editing the page.
+* PHPUnit and Behat tests.
 
-Usage
-=========================
-First install the filter_slider plugin, then activate the filter_slider plugin in Site Administration -> Plugins -> Filters -> Manage filters
-Use this shortcode `[SLIDER-##]` - where ## put sliderid. The shortcode is displayed above the slideshow table 
-when managing slides in the Slider block. 
+### 1.2
+* Moodle 4.5 filter class.
 
-Shortcode should look like this: `[SLIDER-25]`
+### 1.1
+* Fixed issues #3, #5 and #6.
 
-The shortcode "[SLIDER-25]" will be replaced with slider content. Block instance should be created on other page
-than the filter will be used on. Users must have capabilities of displaying the block for the filter to load it.
+### 1.0
+* First release.
 
-Filter is ignoring visibility of slider, so if block is hidden the slider still appers in place of shortcode.
+## License
 
-Settings
-=========================
-There is no settings for this plugin.
-
-Copyright
-=========================
-Written by Kamil Łuczak
-kamil@limsko.pl
-https://www.limsko.pl
+GNU GPL v3 or later. (C) 2020-2026 Kamil Łuczak
