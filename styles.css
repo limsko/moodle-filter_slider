@@ -1,0 +1,8 @@
+/* Slajder osadzony w treści: odstęp od sąsiednich akapitów. */
+.filter-slider {
+    margin: 1rem 0 1.5rem;
+}
+
+.filter-slider-notice {
+    margin: 1rem 0;
+}
